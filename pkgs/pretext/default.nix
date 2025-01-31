@@ -7,7 +7,7 @@
   poetry-core,
   # Dependencies
   gitpython,
-  pypdf2,
+  pypdf25,
   click,
   click-log,
   ghp-import,
@@ -16,7 +16,7 @@
   playwright,
   psutil,
   pymupdf,
-  qrcode,
+  qrcode7,
   requests,
   single-version,
   plastex,
@@ -45,7 +45,7 @@ in
 
     dependencies = [
       gitpython
-      pypdf2
+      pypdf25
       click
       click-log
       ghp-import
@@ -54,7 +54,7 @@ in
       playwright
       psutil
       pymupdf
-      qrcode
+      qrcode7
       requests
       single-version
       plastex

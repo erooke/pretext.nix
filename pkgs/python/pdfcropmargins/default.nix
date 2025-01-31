@@ -9,7 +9,7 @@
   pillow,
   pymupdf,
   wheel,
-  pypdf2,
+  pypdf25,
 }: let
   version = "1.0.9";
 in
@@ -32,6 +32,6 @@ in
       pillow
       pymupdf
       wheel
-      pypdf2
+      pypdf25
     ];
   }
