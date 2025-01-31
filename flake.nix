@@ -19,6 +19,8 @@
       pretext = pkgs.pretext;
     };
 
+    overlays.default = overlay;
+
     templates.default = {
       path = ./templates/minimal;
       description = "Minimal example of using pretext with flakes";

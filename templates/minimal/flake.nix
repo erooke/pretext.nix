@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    pretext.url = "github:erooke/pretext.nvim";
+    pretext.url = "github:erooke/pretext.nix";
   };
 
   outputs = {
@@ -12,11 +12,11 @@
     pretext,
   }: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacy.${system};
+    pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [pretext.overlays.default];
   in {
     devShells.${system}.default = pkgs.mkShell {
       buildInputs = [
-        pretext.pkgs.${system}.pretext
+        pkgs.pretext
       ];
     };
   };
