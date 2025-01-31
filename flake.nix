@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Pretext packaged precariously with nix";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -13,6 +13,15 @@
     ];
   in {
     formatter.${system} = pkgs.alejandra;
-    packages.${system}.default = pkgs.pretext;
+
+    packages.${system} = {
+      default = pkgs.pretext;
+      pretext = pkgs.pretext;
+    };
+
+    templates.default = {
+      path = ./templates/minimal;
+      description = "Minimal example of using pretext with flakes";
+    };
   };
 }
